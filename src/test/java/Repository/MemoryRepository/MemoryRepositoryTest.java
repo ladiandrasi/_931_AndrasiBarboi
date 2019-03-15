@@ -42,6 +42,7 @@ public class MemoryRepositoryTest
         assertTrue(studentRepo.findAll().spliterator().getExactSizeIfKnown()==0);
         try{
             studentRepo.save(student);
+            assertTrue(false);
         }catch(ValidatorException ex){
             assertTrue(ex.getMessage().contains("Grupa invalid"));
         }
