@@ -47,4 +47,18 @@ public class MemoryRepositoryTest
             assertTrue(ex.getMessage().contains("Grupa invalid"));
         }
     }
+    @Test
+    public void shouldThrowWhenGivenNullStudent() {
+        StudentValidator vs=new StudentValidator();
+        StudentRepo studentRepo = new StudentRepo(vs);
+        Student student = null;
+        try{
+            studentRepo.save(student);
+            assertTrue(false);
+        }catch(IllegalArgumentException ex){
+            assertTrue(ex.getMessage().contains("Entity can not be null!\n"));
+        } catch (ValidatorException e) {
+            e.printStackTrace();
+        }
+    }
 }
