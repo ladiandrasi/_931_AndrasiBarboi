@@ -46,7 +46,7 @@ public class MemoryRepositoryTest
     }
 
     @Test
-    public void shouldThrowWhenGivenIncorrectGroupId() throws ValidatorException {
+    public void shouldThrowWhenGivenIncorrectGroupId(){
         StudentValidator vs=new StudentValidator();
         StudentRepo studentRepo = new StudentRepo(vs);
         Student student = new Student(
@@ -65,7 +65,7 @@ public class MemoryRepositoryTest
         }
     }
     @Test
-    public void shouldThrowWhenGivenNullStudent() {
+    public void shouldThrowWhenGivenNullStudent(){
         StudentValidator vs=new StudentValidator();
         StudentRepo studentRepo = new StudentRepo(vs);
         Student student = null;
