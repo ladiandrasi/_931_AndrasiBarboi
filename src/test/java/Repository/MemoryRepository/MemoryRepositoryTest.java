@@ -80,7 +80,7 @@ public class MemoryRepositoryTest
     }
 
     @Test
-    public void shouldThrowWhenGivenNullAssignment() {
+    public void test_ShouldThrowWhenGivenNullAssignment() {
         TemaLabValidator vs=new TemaLabValidator();
         TemaLabRepo temaLabRepo = new TemaLabRepo(vs);
         TemaLab temaLab = null;
