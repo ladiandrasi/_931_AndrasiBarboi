@@ -79,27 +79,27 @@ public abstract class AbstractXMLRepo<ID,E extends HasId<ID>> extends AbstractCr
 
     @Override
     public E save(E e) throws ValidatorException {
-        Object stuff=super.save(e);
+        var stuff=super.save(e);
         if(stuff==null){
             writeAll();
         }
-        return (E)stuff;
+        return stuff;
     }
 
     @Override
     public E delete(ID id) {
-        Object stuff=super.delete(id);
+        var stuff=super.delete(id);
         if(stuff!=null)
             writeAll();
-        return (E)stuff;
+        return stuff;
     }
 
     @Override
     public E update(E entity) {
-        Object stuff=super.update(entity);
+        var stuff=super.update(entity);
         if(stuff!=null)
             writeAll();
-        return (E)stuff;
+        return stuff;
     }
     @Override
     public  E findOne(ID id){
